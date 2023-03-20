@@ -137,3 +137,11 @@ SELECT to_date('50/12/10', 'RR/MM/DD') AS RR_YEAR_49
   FROM dual;
 SELECT to_date('50/12/10', 'YY/MM/DD') AS YY_YEAR_49
   FROM dual;
+
+--NVL 매우 중요!!
+--NVL2 예제를 NVL로 바꿔보기
+ SELECT EMPNO
+ 		, ENAME
+ 		, COMM
+ 		, (SAL*12) + NVL(COMM,0) AS 연봉
+   FROM EMP e;
